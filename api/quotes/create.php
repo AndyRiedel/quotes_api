@@ -31,12 +31,12 @@
         //check for authorId
         if (!$quote->authCheck()){
             echo json_encode(array('message' => 'authorId Not Found'));
+            die();
         };
-
-
-        //print_r('has auth result ' . $hasAuth);
-
+        
         //check for categoryId
+        
+
         if ($quote->create()){
             //need to get the newly created quote id
             echo json_encode(
