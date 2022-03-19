@@ -23,7 +23,7 @@
             $quote->delete();
         }
         else {
-            print_r(json_encode(array('message' => 'No Quotes Found')));
+            print_r(json_encode(array('message' => 'Missing Required Parameters')));
         }
 
 ?>
