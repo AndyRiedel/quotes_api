@@ -197,6 +197,7 @@
 
             //execute
             if ($stmt->execute()){
+                print_r(var_dump($stmt));
                 //get the quote id for the response value
                 $newIdQuery = 'SELECT MAX(id) "newQuoteId" from ' . $this->table . ' where quote = :quote';
                 $stmtId = $this->conn->prepare($newIdQuery);
