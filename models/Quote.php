@@ -182,7 +182,7 @@
 
             $this->authorId = htmlspecialchars(strip_tags($this->authorId));
             $stmt->bindParam(':authorId', $this->authorId);
-            print_r(var_dump($stmt));
+            print_r($stmt);
             if ($stmt->execute()){
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
                 print_r(var_dump($row));

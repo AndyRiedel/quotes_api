@@ -29,7 +29,7 @@
         $quote->categoryId = $data->categoryId;
 
         //check for authorId
-        //$hasAuth = $quote->authCheck();
+        $hasAuth = $quote->authCheck();
         //print_r('has auth result ' . $hasAuth);
 
         //check for categoryId
