@@ -35,7 +35,10 @@
         };
         
         //check for categoryId
-        
+        if (!$quote->catCheck()){
+            echo json_encode(array('message' => 'categoryId Not Found'));
+            die();
+        };
 
         if ($quote->create()){
             //need to get the newly created quote id

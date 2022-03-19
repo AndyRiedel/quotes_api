@@ -188,9 +188,39 @@
             
             if ($stmt->execute()){
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                print_r(var_dump($row));
                 extract($row);
                 if ($authIdCount > 0){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            else {
+                printf('ERROR: %s.\n', $stmt->error);
+                return false;
+            }
+            
+        }
+
+
+        //categoryId check
+        public function catCheck(){
+            //given an authorId, confirm it exists
+            //returns true or false
+            
+            $catSql = 'SELECT COUNT(*) "catIdCount"
+                    FROM categories 
+                    WHERE id = :categoryId';
+            
+            $stmt = $this->conn->prepare($catSql);
+
+            $this->catId = htmlspecialchars(strip_tags($this->catId));    
+            $stmt->bindParam(':categoryId', $this->catId);
+            
+            if ($stmt->execute()){
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                extract($row);
+                if ($catIdCount > 0){
                     return true;
                 } else {
                     return false;
