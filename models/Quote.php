@@ -190,6 +190,8 @@
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
                 print_r(var_dump($row));
                 extract($row);
+                print_r($row);
+                print_r($authIdCount);
                 return true;
             }
             else {
