@@ -214,8 +214,8 @@
             
             $stmt = $this->conn->prepare($catSql);
 
-            $this->catId = htmlspecialchars(strip_tags($this->catId));    
-            $stmt->bindParam(':categoryId', $this->catId);
+            $this->categoryId = htmlspecialchars(strip_tags($this->categoryId));    
+            $stmt->bindParam(':categoryId', $this->categoryId);
             
             if ($stmt->execute()){
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -246,7 +246,7 @@
 
             //clean up data
             $this->quote = htmlspecialchars(strip_tags($this->quote));
-            //$this->authorId = htmlspecialchars(strip_tags($this->authorId));
+            $this->authorId = htmlspecialchars(strip_tags($this->authorId));
             $this->categoryId = htmlspecialchars(strip_tags($this->categoryId));
             //bind data
             $stmt->bindParam(':quote', $this->quote);
