@@ -21,6 +21,7 @@
                                         $this->username,
                                         $this->password);
                 
+                
                 //set errormode
                 $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             }   catch(PDOException $e){

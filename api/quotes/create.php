@@ -18,7 +18,6 @@
     //new quote data
     $data = json_decode(file_get_contents('php://input'));
 
-    print_r('test');
     //create quote
     if (isset($data->quote) && $data->quote != '' //check for quote
         && isset($data->authorId) && $data->authorId != ''
