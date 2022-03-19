@@ -176,6 +176,8 @@
         public function authCheck(){
             //given an authorId, confirm it exists
             //returns true or false
+            return true;
+            /*
             $stmt = 'SELECT COUNT(*) "authIdCount"
                     FROM authors 
                     WHERE id = :authorId';
@@ -193,7 +195,7 @@
                 printf('ERROR: %s.\n', $stmt->error);
                 return false;
             }
-
+            */
         }
 
         //create quote
