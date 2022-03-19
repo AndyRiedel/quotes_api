@@ -181,14 +181,15 @@
                     FROM authors 
                     WHERE id = :authorId';
             
+            $stmt = $this->conn->prepare($authSql);
+
             $this->authorId = htmlspecialchars(strip_tags($this->authorId));    
-            $authSql->bindParam(':authorId', $this->authorId);
+            $stmt->bindParam(':authorId', $this->authorId);
             
-            
-            if ($authSql->execute()){
-                //$row = $authSql->fetch(PDO::FETCH_ASSOC);
-                //print_r(var_dump($row));
-                //extract($row);
+            if ($stmt->execute()){
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                print_r(var_dump($row));
+                extract($row);
                 return true;
             }
             else {
