@@ -186,8 +186,8 @@
             
             
             if ($authSql->execute()){
-                $row = $authSql->fetch(PDO::FETCH_ASSOC);
-                print_r(var_dump($row));
+                //$row = $authSql->fetch(PDO::FETCH_ASSOC);
+                //print_r(var_dump($row));
                 //extract($row);
                 return true;
             }
