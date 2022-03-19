@@ -24,9 +24,9 @@
         $category->category = $data->category;
         if($category->create()){
             echo json_encode(
-                array('message' => 'Category Created',
+                array(
                     'category' => $category->category,
-                    'id' => $category->id)
+                    'id' => strval($category->id))
             );
         } else {
             echo json_encode(
