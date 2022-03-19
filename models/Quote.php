@@ -182,12 +182,11 @@
                     WHERE id = :authorId';
             
             $this->authorId = htmlspecialchars(strip_tags($this->authorId));    
-            //$authSql->bindParam(':authorId', $this->authorId);
+            $authSql->bindParam(':authorId', $this->authorId);
             
-            return true;
-            /*
-            if ($stmt->execute()){
-                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            if ($authSql->execute()){
+                $row = $authSql->fetch(PDO::FETCH_ASSOC);
                 print_r(var_dump($row));
                 extract($row);
                 return $authIdCount > 0;
@@ -196,7 +195,7 @@
                 printf('ERROR: %s.\n', $stmt->error);
                 return false;
             }
-            */
+            
         }
 
         //create quote
