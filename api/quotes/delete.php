@@ -17,13 +17,13 @@
 
         //get input from client
         $data = json_decode(file_get_contents('php://input'));
-        if (isset($data->id)){ //check if id was passed
+        if (isset($data->id) && $data->id != ''){ //check if id was passed
             $quote->id = $data->id;    
             //delete quote
             $quote->delete();
         }
         else {
-            print_r(json_encode(array('message' => 'Missing Required Parameters')));
+            print_r(json_encode(array('message' => 'No Quotes Found')));
         }
 
 ?>
