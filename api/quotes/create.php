@@ -30,7 +30,7 @@
         if ($quote->create()){
             //need to get the newly created quote id
             echo json_encode(
-                array('message' => 'Quote Created',
+                array(
                     'id' => strval($quote->id),
                     'quote' => $quote->quote,
                     'authorId' => $quote->authorId,
