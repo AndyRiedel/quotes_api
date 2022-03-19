@@ -22,10 +22,10 @@
     if (isset($data->quote) && $data->quote != '' //check for quote
         && isset($data->authorId) && $data->authorId != ''
         && isset($data->categoryId) && $data->categoryId != '') {
-
+        print_r("Test");
         //check for authorId
         $hasAuth = $quote->authCheck();
-        print_r('has auth result ' . $hasAuth);
+        //print_r('has auth result ' . $hasAuth);
 
         //check for categoryId
 
