@@ -29,8 +29,11 @@
         $quote->categoryId = $data->categoryId;
 
         //check for authorId
-        
-        $quote->authCheck();
+        if (!$quote->authCheck()){
+            echo json_encode(array('message' => 'authorId Not Found'));
+        };
+
+
         //print_r('has auth result ' . $hasAuth);
 
         //check for categoryId
