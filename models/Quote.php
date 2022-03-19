@@ -190,9 +190,11 @@
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
                 print_r(var_dump($row));
                 extract($row);
-                print_r($row);
-                print_r($authIdCount);
-                return true;
+                if ($authIdCount > 0){
+                    return true;
+                } else {
+                    return false;
+                }
             }
             else {
                 printf('ERROR: %s.\n', $stmt->error);
