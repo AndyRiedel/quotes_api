@@ -181,8 +181,8 @@
                     FROM authors 
                     WHERE id = :authorId';
             
-            $this->authorId = htmlspecialchars(strip_tags($this->authorId));    
-            $authSql->bindParam(':authorId', $this->authorId);
+            //$this->authorId = htmlspecialchars(strip_tags($this->authorId));    
+            //$authSql->bindParam(':authorId', $this->authorId);
             
             return true;
             /*
