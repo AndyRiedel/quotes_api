@@ -24,7 +24,7 @@
         $author->author = $data->author;
         if($author->create()){
             echo json_encode(
-                array('message' => 'Author Created',
+                array(
                     'author' => $author->author,
                     'id' => $author->id)
             );
