@@ -50,7 +50,7 @@
                     'categoryId' => $quote->categoryId)
             );
         } else {
-            print_r(json_encode(array('message' => 'Quote Not Found')));
+            print_r(json_encode(array('message' => 'No Quotes Found')));
         }
     }
     else {
