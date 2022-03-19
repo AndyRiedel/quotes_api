@@ -29,8 +29,8 @@
         $quote->categoryId = $data->categoryId;
 
         //check for authorId
-        $hasAuth = $quote->authCheck();
-        print_r('has auth result ' . $hasAuth);
+        //$hasAuth = $quote->authCheck();
+        //print_r('has auth result ' . $hasAuth);
 
         //check for categoryId
         if ($quote->create()){
