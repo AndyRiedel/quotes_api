@@ -173,13 +173,14 @@
 
 
         //authorId check
-        public function authCheck($authId){
+        public function authCheck(){
             //given an authorId, confirm it exists
             //returns true or false
-            $this->authorId = htmlspecialchars(strip_tags($this->authorId));
             $stmt = 'SELECT COUNT(*) "authIdCount"
                     FROM authors 
                     WHERE id = :authorId';
+
+            $this->authorId = htmlspecialchars(strip_tags($this->authorId));
             $stmt->bindParam(':authorId', $this->authorId);
             print_r(var_dump($stmt));
             if ($stmt->execute()){
