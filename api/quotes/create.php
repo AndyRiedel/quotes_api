@@ -31,7 +31,7 @@
             //need to get the newly created quote id
             echo json_encode(
                 array('message' => 'Quote Created',
-                    'id' => $quote->id,
+                    'id' => strval($quote->id),
                     'quote' => $quote->quote,
                     'authorId' => $quote->authorId,
                     'categoryId' => $quote->categoryId)
