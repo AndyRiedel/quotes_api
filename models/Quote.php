@@ -180,10 +180,10 @@
             $stmt = 'SELECT COUNT(*) "authIdCount"
                     FROM authors 
                     WHERE id = :authorId';
-
-            $this->authorId = htmlspecialchars(strip_tags($this->authorId));
-            $stmt->bindParam(':authorId', $this->authorId);
             print_r($stmt);
+            $this->authorId = htmlspecialchars(strip_tags($this->authorId));    
+            $stmt->bindParam(':authorId', $this->authorId);
+            
             return true;
             /*
             if ($stmt->execute()){
