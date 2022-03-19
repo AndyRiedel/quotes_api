@@ -27,6 +27,19 @@
         $quote->authorId = $data->authorId;
         $quote->categoryId = $data->categoryId;
 
+        //check for authorId
+        if (!$quote->authCheck()){
+            echo json_encode(array('message' => 'authorId Not Found'));
+            die();
+        };
+        
+        //check for categoryId
+        if (!$quote->catCheck()){
+            echo json_encode(array('message' => 'categoryId Not Found'));
+            die();
+        };
+
+
         //update quote
         if($quote->update()) {
             echo json_encode(
