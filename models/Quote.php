@@ -188,8 +188,8 @@
             if ($authSql->execute()){
                 $row = $authSql->fetch(PDO::FETCH_ASSOC);
                 print_r(var_dump($row));
-                extract($row);
-                return $authIdCount > 0;
+                //extract($row);
+                return true;
             }
             else {
                 printf('ERROR: %s.\n', $stmt->error);
