@@ -184,6 +184,8 @@
             $this->authorId = htmlspecialchars(strip_tags($this->authorId));
             $stmt->bindParam(':authorId', $this->authorId);
             print_r($stmt);
+            return true;
+            /*
             if ($stmt->execute()){
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
                 print_r(var_dump($row));
@@ -194,7 +196,7 @@
                 printf('ERROR: %s.\n', $stmt->error);
                 return false;
             }
-            
+            */
         }
 
         //create quote
