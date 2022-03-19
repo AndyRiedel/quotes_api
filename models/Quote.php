@@ -181,10 +181,10 @@
                     FROM authors 
                     WHERE id = :authorId';
             $stmt->bindParam(':authorId', $this->authorId);
-            print_f(var_dump($stmt));
+            print_r(var_dump($stmt));
             if ($stmt->execute()){
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                print_f(var_dump($row));
+                print_r(var_dump($row));
                 extract($row);
                 return $authIdCount > 0;
             }

@@ -25,7 +25,7 @@
 
         //check for authorId
         $hasAuth = $quote->authCheck();
-        print_f('has auth result ' . $hasAuth);
+        print_r('has auth result ' . $hasAuth);
 
         //check for categoryId
 
