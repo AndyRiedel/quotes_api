@@ -23,16 +23,17 @@
         && isset($data->authorId) && $data->authorId != ''
         && isset($data->categoryId) && $data->categoryId != '') {
         print_r("Test");
-        //check for authorId
-        $hasAuth = $quote->authCheck();
-        //print_r('has auth result ' . $hasAuth);
 
-        //check for categoryId
 
         $quote->quote = $data->quote;
         $quote->authorId = $data->authorId;
         $quote->categoryId = $data->categoryId;
 
+        //check for authorId
+        $hasAuth = $quote->authCheck();
+        print_r('has auth result ' . $hasAuth);
+
+        //check for categoryId
         if ($quote->create()){
             //need to get the newly created quote id
             echo json_encode(
