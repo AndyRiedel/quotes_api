@@ -21,7 +21,6 @@
     //check if authors
     if($num>0) {
         $authors_arr = array();
-        $authors_arr['data'] = array();
         while ($row = $result->fetch(PDO::FETCH_ASSOC)){
             extract($row);
 
@@ -31,7 +30,7 @@
             );
 
             //push to data
-            array_push($authors_arr['data'], $authors_item);
+            array_push($authors_arr, $authors_item);
         }
 
         //jsonify

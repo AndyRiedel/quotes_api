@@ -21,7 +21,6 @@
     //check if category
     if($num>0) {
         $cat_arr = array();
-        $cat_arr['data'] = array();
         while ($row = $result->fetch(PDO::FETCH_ASSOC)){
             extract($row);
 
@@ -31,7 +30,7 @@
             );
 
             //push to data
-            array_push($cat_arr['data'], $cat_item);
+            array_push($cat_arr, $cat_item);
         }
 
         //jsonify
