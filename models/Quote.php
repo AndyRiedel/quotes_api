@@ -181,7 +181,7 @@
                     FROM authors 
                     WHERE id = :authorId';
             
-            //$this->authorId = htmlspecialchars(strip_tags($this->authorId));    
+            $this->authorId = htmlspecialchars(strip_tags($this->authorId));    
             //$authSql->bindParam(':authorId', $this->authorId);
             
             return true;
@@ -212,7 +212,7 @@
 
             //clean up data
             $this->quote = htmlspecialchars(strip_tags($this->quote));
-            $this->authorId = htmlspecialchars(strip_tags($this->authorId));
+            //$this->authorId = htmlspecialchars(strip_tags($this->authorId));
             $this->categoryId = htmlspecialchars(strip_tags($this->categoryId));
             //bind data
             $stmt->bindParam(':quote', $this->quote);
