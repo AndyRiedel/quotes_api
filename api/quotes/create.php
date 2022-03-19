@@ -23,6 +23,12 @@
         && isset($data->authorId) && $data->authorId != ''
         && isset($data->categoryId) && $data->categoryId != '') {
 
+        //check for authorId
+        $hasAuth = $quote->authCheck();
+        print_f('has auth result ' . $hasAuth);
+
+        //check for categoryId
+
         $quote->quote = $data->quote;
         $quote->authorId = $data->authorId;
         $quote->categoryId = $data->categoryId;

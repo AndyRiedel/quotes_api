@@ -172,8 +172,27 @@
         }  
 
 
+        //authorId check
+        public function authCheck($authId){
+            //given an authorId, confirm it exists
+            //returns true or false
+            $this->authorId = htmlspecialchars(strip_tags($this->authorId));
+            $stmt = 'SELECT COUNT(*) "authIdCount"
+                    FROM authors 
+                    WHERE id = :authorId';
+            $stmt->bindParam(':authorId', $this->authorId);
+            if ($stmt->execute()){
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                print_f(var_dump($row));
+                extract($row);
+                return $authIdCount > 0;
+            }
+            else {
+                printf('ERROR: %s.\n', $stmt->error);
+                return false;
+            }
 
-
+        }
 
         //create quote
         public function create(){
@@ -197,7 +216,6 @@
 
             //execute
             if ($stmt->execute()){
-                print_r(var_dump($stmt));
                 //get the quote id for the response value
                 $newIdQuery = 'SELECT MAX(id) "newQuoteId" from ' . $this->table . ' where quote = :quote';
                 $stmtId = $this->conn->prepare($newIdQuery);
